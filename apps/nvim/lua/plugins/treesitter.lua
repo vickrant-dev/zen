@@ -21,7 +21,7 @@ return {
       "vimdoc",
       "query",
     },
-    
+
     auto_install = false,
 
     highlight = {

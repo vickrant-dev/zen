@@ -17,3 +17,7 @@ vim.opt.splitbelow = true
 vim.opt.scrolloff = 8
 
 vim.opt.undofile = true
+
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
