@@ -1,0 +1,6 @@
+# Shared git settings. Put your name and email in ~/.gitconfig.local (not in this repo).
+[include]
+	path = ~/.gitconfig.local
+[user]
+	email = vickrantselvendran@gmail.com
+	name = Vickrant

@@ -1,0 +1,7 @@
+# lf: colors come from the terminal (kitty theme), so nothing is themed here.
+set hidden false
+set icons false
+set drawbox true
+set ignorecase true
+map . set hidden!
+map <enter> open

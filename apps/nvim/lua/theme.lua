@@ -1,0 +1,1 @@
+/home/vickrant/desktop/generated/nvim/lua/theme.lua

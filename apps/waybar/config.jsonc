@@ -1,0 +1,69 @@
+{
+	"layer": "top",
+	"position": "top",
+	"height": 34,
+	"spacing": 0,
+	"margin-top": 8,
+	"margin-left": 12,
+	"margin-right": 12,
+
+	"modules-left": ["hyprland/workspaces"],
+	"modules-center": ["clock"],
+	"modules-right": ["tray", "pulseaudio", "network", "bluetooth", "battery"],
+
+	"hyprland/workspaces": {
+		"format": "{name}",
+		"on-click": "activate",
+		"all-outputs": false
+	},
+
+	"clock": {
+		"format": "{:%H:%M · %a %d %b}",
+		"tooltip-format": "{:%A, %d %B %Y}"
+	},
+
+	"battery": {
+		"format": "{capacity}%  {icon}",
+		"format-charging": "{capacity}%  \uf0e7",
+		"format-plugged": "{capacity}%  \uf1e6",
+		"format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"tooltip-format": "{timeTo}"
+	},
+
+    "bluetooth": {
+        "format-on": "\uf293",
+        "format-off": "\uf293",
+        "format-disabled": "\uf293",
+        "format-connected": "\uf293 {num_connections}",
+        "tooltip-format": "{controller_alias}\t{status}",
+        "on-click": "~/.local/bin/desktop menu bluetooth"
+    },
+
+	"network": {
+		"format-wifi": "\uf1eb  {signalStrength}%",
+		"format-ethernet": "\uf796  {ipaddr}",
+		"format-disconnected": "\uf127",
+        "format-disabled": "\uf05e",
+		"tooltip-format": "{essid} · {ipaddr}",
+        "on-click": "~/.local/bin/desktop menu wifi"
+	},
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "\uf026 muted",
+        "format-icons": {
+            "default": ["\uf026", "\uf027", "\uf028"]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+
+	"tray": {
+		"icon-size": 16,
+		"spacing": 8
+	}
+}

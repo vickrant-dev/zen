@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# desktop: one entry point for themes, wallpapers, menus, volume, keybinds and setup.
+set -euo pipefail
+ROOT="$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)"
+cmd="${1:-help}"; shift || true
+
+case "$cmd" in
+  theme)      "$ROOT/scripts/apply.sh" "${1:?usage: desktop theme <name>}" ;;
+  theme-menu)
+    pick="$(ls "$ROOT/themes" | rofi -dmenu -i -p Theme)" || exit 0
+    [[ -n "$pick" ]] && "$ROOT/scripts/apply.sh" "$pick"
+    ;;
+  themes)     ls "$ROOT/themes" ;;
+  wallpaper)  "$ROOT/scripts/wallpaper.sh" "${1:-next}" "${@:2}" ;;
+  menu)       "$ROOT/scripts/menu.sh" "${1:-connectivity}" ;;
+  volume)     "$ROOT/scripts/volume.sh" ;;
+  keys)       "$ROOT/scripts/keys.sh" "$@" ;;
+  install)    "$ROOT/scripts/install.sh" ;;
+  doctor)     "$ROOT/scripts/doctor.sh" ;;
+  *)
+    cat <<USAGE
+desktop theme <name>            render and apply a theme
+desktop theme-menu              pick a theme in rofi (SUPER+CTRL+SPACE)
+desktop themes                  list themes
+desktop wallpaper [next|prev|random|set <file>]
+desktop menu [wifi|bluetooth]   Wi-Fi and Bluetooth panel (SUPER+N)
+desktop volume                  volume panel (click the speaker in the bar)
+desktop keys [--menu]           list keybinds (SUPER+/ opens them in rofi)
+desktop install                 link configs into \$HOME
+desktop doctor                  check tools and broken links
+USAGE
+    ;;
+esac
