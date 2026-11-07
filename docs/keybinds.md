@@ -4,7 +4,7 @@ The source is `apps/hypr/keybinds.conf`. Run `desktop keys` for the live list. T
 
 Groups:
 
-- **Apps:** RETURN terminal, SPACE launcher, E Thunar, SHIFT+E lf in kitty, B browser, / cheatsheet, CTRL+SPACE theme picker.
+- **Apps:** RETURN terminal, SPACE launcher (apps, or a Google search when nothing matches), E Thunar, SHIFT+E lf in kitty, B browser, / cheatsheet, CTRL+SPACE theme picker.
 - **Windows:** W close, F fullscreen, T float, SHIFT+Q exit.
 - **Focus and move:** H J K L focus, SHIFT+H J K L move the window.
 - **Resize:** ALT+arrows.

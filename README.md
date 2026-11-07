@@ -19,6 +19,7 @@ Then add `~/.local/bin` to your PATH (already in the included `.zshrc`).
 | Command | What it does |
 |---|---|
 | `desktop theme <name>` | render and apply a theme |
+| `desktop launcher` | app launcher; no match opens a Google search (SUPER+SPACE) |
 | `SUPER+CTRL+SPACE` | pick a theme from a menu |
 | `desktop keys` | list all keybinds |
 | `SUPER+/` | show keybinds in rofi |

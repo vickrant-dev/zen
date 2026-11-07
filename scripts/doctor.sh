@@ -4,7 +4,7 @@ set -euo pipefail
 source "$(dirname "$0")/lib.sh"
 
 echo "Tools:"
-for c in envsubst hyprctl waybar mako rofi kitty nvim thunar lf firefox; do
+for c in envsubst hyprctl waybar mako rofi kitty nvim thunar lf firefox gio google-chrome-stable; do
   if command -v "$c" >/dev/null 2>&1; then echo "  ok    $c"; else echo "  miss  $c"; fi
 done
 
