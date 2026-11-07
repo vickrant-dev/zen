@@ -1,5 +1,6 @@
 return {
   "petertriho/nvim-scrollbar",
+  branch = "v1",
 
   dependencies = {
     "lewis6991/gitsigns.nvim",

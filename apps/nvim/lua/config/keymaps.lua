@@ -111,3 +111,9 @@ vim.keymap.set("n", "<leader>xx", function()
 end, {
   desc = "Diagnostics quickfix",
 })
+
+-- Copy file name only.
+vim.keymap.set('n', '<leader>cf', function()
+  vim.fn.setreg('+', vim.fn.expand('%:t'))
+  print("Copied file name: " .. vim.fn.expand('%:t'))
+end, { desc = 'Copy current file name' })
