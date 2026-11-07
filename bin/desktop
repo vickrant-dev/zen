@@ -13,6 +13,7 @@ case "$cmd" in
   themes)     ls "$ROOT/themes" ;;
   wallpaper)  "$ROOT/scripts/wallpaper.sh" "${1:-next}" "${@:2}" ;;
   menu)       "$ROOT/scripts/menu.sh" "${1:-connectivity}" ;;
+  launcher)   "$ROOT/scripts/launcher.sh" "$@" ;;
   volume)     "$ROOT/scripts/volume.sh" ;;
   keys)       "$ROOT/scripts/keys.sh" "$@" ;;
   install)    "$ROOT/scripts/install.sh" ;;
@@ -24,6 +25,7 @@ desktop theme-menu              pick a theme in rofi (SUPER+CTRL+SPACE)
 desktop themes                  list themes
 desktop wallpaper [next|prev|random|set <file>]
 desktop menu [wifi|bluetooth]   Wi-Fi and Bluetooth panel (SUPER+N)
+desktop launcher                app launcher, or a web search when nothing matches (SUPER+SPACE)
 desktop volume                  volume panel (click the speaker in the bar)
 desktop keys [--menu]           list keybinds (SUPER+/ opens them in rofi)
 desktop install                 link configs into \$HOME
